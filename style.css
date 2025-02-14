@@ -140,7 +140,7 @@ span.heart-trail::before {
 /* Responsive Design */
 @media (max-width: 768px) {
   .text1 {
-    font-size: 50px; /* Smaller font size for mobile */
+    font-size: 40px; /* Smaller font size for mobile */
     letter-spacing: 4px; /* Reduce letter spacing */
   }
 
@@ -163,7 +163,7 @@ span.heart-trail::before {
   }
 
   .message-content p {
-    font-size: 30px; /* Smaller font size for mobile */
+    font-size: 24px; /* Smaller font size for mobile */
   }
 
   /* Adjust close button for mobile */
@@ -344,4 +344,60 @@ span.heart-trail::before {
 
 .signature {
   animation: fadeIn 2s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust text sizes for mobile */
+  .text1 {
+    font-size: 50px; /* Smaller font size for mobile */
+    letter-spacing: 4px; /* Reduce letter spacing */
+  }
+
+  .text2 {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
+
+  /* Adjust message button for mobile */
+  .message-button {
+    font-size: 16px; /* Smaller font size */
+    padding: 8px 16px; /* Smaller padding */
+    bottom: 15px; /* Move closer to the bottom */
+    right: 15px; /* Move closer to the right */
+  }
+
+  /* Adjust message box for mobile */
+  .message-content {
+    max-width: 90%; /* Wider on mobile */
+    padding: 15px; /* Smaller padding */
+  }
+
+  .message-content p {
+    font-size: 30px; /* Smaller font size for mobile */
+  }
+
+  /* Adjust close button for mobile */
+  .close-button {
+    font-size: 30px; /* Smaller close button */
+    top: 5px; /* Move closer to the top */
+    right: 5px; /* Move closer to the right */
+  }
+
+  /* Adjust signature for mobile */
+  .signature {
+    font-family: 'Norican';
+    text-align: center;
+    font-size: 26px;
+    font-weight: bolder;
+    color: #ad00a749; /* Semi-transparent white */
+    z-index: 10; /* Ensure it's above other elements */
+    position: fixed;
+    margin-top: 20px; /* Adds space between the message and the signature */
+    transition: color 0.3s ease;
+  }
+}
+
+/* Prevent zooming on input */
+input, textarea, button, select {
+  font-size: 16px; /* Prevent iOS zooming on input */
 }

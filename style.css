@@ -401,3 +401,33 @@ span.heart-trail::before {
 input, textarea, button, select {
   font-size: 16px; /* Prevent iOS zooming on input */
 }
+
+/* Loading Screen */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Ensure it's above everything */
+}
+
+.loader {
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.5;
+  }
+}

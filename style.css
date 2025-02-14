@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Lobster&family=Norican&family=Pacifico&family=Parisienne&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Lobster&family=Norican&family=Pacifico&family=Parisienne&family=Sacramento&family=Satisfy&display=swap');
 
 * {
   padding: 0;
@@ -137,34 +137,47 @@ span.heart-trail::before {
   }
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
   .text1 {
-    font-size: 50px; /* Smaller text for mobile */
-    letter-spacing: 5px;
-  }
-  
-  .text2 {
-    font-size: 20px; /* Smaller text for mobile */
+    font-size: 50px; /* Smaller font size for mobile */
+    letter-spacing: 4px; /* Reduce letter spacing */
   }
 
+  .text2 {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
+
+  /* Adjust message button for mobile */
   .message-button {
-    font-size: 16px;
-    padding: 8px 15px;
-    bottom: 10px;
-    right: 10px;
+    font-size: 16px; /* Smaller font size */
+    padding: 8px 16px; /* Smaller padding */
+    bottom: 15px; /* Move closer to the bottom */
+    right: 15px; /* Move closer to the right */
+  }
+
+  /* Adjust message box for mobile */
+  .message-content {
+    max-width: 90%; /* Wider on mobile */
+    padding: 15px; /* Smaller padding */
   }
 
   .message-content p {
-    font-size: 40px; /* Adjust text size for better readability on small screens */
+    font-size: 30px; /* Smaller font size for mobile */
   }
 
-  .message-box {
-    padding: 10px; /* Reduce padding for message box on mobile */
+  /* Adjust close button for mobile */
+  .close-button {
+    font-size: 30px; /* Smaller close button */
+    top: 5px; /* Move closer to the top */
+    right: 5px; /* Move closer to the right */
   }
 
+  /* Adjust signature for mobile */
   .signature {
-    font-size: 20px; /* Smaller signature size for mobile */
+    font-size: 18px; /* Smaller font size for mobile */
+    bottom: 15px; /* Move closer to the bottom */
+    left: 15px; /* Move closer to the left */
   }
 }
 
@@ -202,11 +215,11 @@ span.heart-trail::before {
   opacity: 1;
 }
 
-.text1:hover{
+.text1:hover {
   cursor: none;
 }
 
-.text2:hover{
+.text2:hover {
   cursor: none;
 }
 
@@ -246,7 +259,7 @@ span.heart-trail::before {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 1;
+  z-index: 1000; /* Ensure it's above everything */
 }
 
 .message-box.active {
@@ -263,12 +276,14 @@ span.heart-trail::before {
   text-align: center;
   position: relative;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transform: scale(0.8);
-  transition: transform 0.3s ease;
+  transform: scale(0.8); /* Start smaller */
+  opacity: 0; /* Start invisible */
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .message-box.active .message-content {
-  transform: scale(1);
+  transform: scale(1); /* Scale up to normal size */
+  opacity: 1; /* Fade in */
 }
 
 /* Close Button */
@@ -288,7 +303,7 @@ span.heart-trail::before {
 
 /* Message Text */
 .message-content p {
-  font-family: 'Parisienne';
+  font-family: 'Parisienne', cursive;
   font-size: 50px;
   color: #333;
   margin: 20px 0;
@@ -296,92 +311,37 @@ span.heart-trail::before {
 
 /* Signature */
 .signature {
-  font-family: 'Norican';
+  font-family: 'Norican', cursive;
   position: fixed;
   text-align: center;
-  bottom: 30px;
-  left: 30px;
-  font-size: 26px;
+  bottom: 20px;
+  left: 20px;
+  font-size: 20px;
   font-weight: bolder;
   color: #ad00a749; /* Semi-transparent white */
   z-index: 10; /* Ensure it's above other elements */
-  transition: color 0.3s ease;
+  transition: bottom 0.3s ease, color 0.3s ease;
 }
 
 .signature:hover {
   color: #ad00a8; /* Fully visible on hover */
+  cursor: none;
+}
+
+/* Move signature down when message box is open */
+.message-box.active ~ .signature {
+  bottom: -100px; /* Move signature out of view */
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
+      opacity: 0;
   }
   to {
-    opacity: 1;
+      opacity: 1;
   }
 }
 
 .signature {
   animation: fadeIn 2s ease-in-out;
-}
-
-.message-box.active ~ .signature {
-  bottom: -100px; /* Move signature out of view */
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  /* Adjust text sizes for mobile */
-  .text1 {
-    font-size: 50px; /* Smaller font size for mobile */
-    letter-spacing: 4px; /* Reduce letter spacing */
-  }
-
-  .text2 {
-    font-size: 20px; /* Smaller font size for mobile */
-  }
-
-  /* Adjust message button for mobile */
-  .message-button {
-    font-size: 16px; /* Smaller font size */
-    padding: 8px 16px; /* Smaller padding */
-    bottom: 15px; /* Move closer to the bottom */
-    right: 15px; /* Move closer to the right */
-  }
-
-  /* Adjust message box for mobile */
-  .message-content {
-    max-width: 90%; /* Wider on mobile */
-    padding: 15px; /* Smaller padding */
-  }
-
-  .message-content p {
-    font-size: 30px; /* Smaller font size for mobile */
-  }
-
-  /* Adjust close button for mobile */
-  .close-button {
-    font-size: 30px; /* Smaller close button */
-    top: 5px; /* Move closer to the top */
-    right: 5px; /* Move closer to the right */
-  }
-
-  /* Adjust signature for mobile */
-  .signature {
-    font-family: 'Norican';
-    text-align: center;
-    font-size: 26px;
-    font-weight: bolder;
-    color: #ad00a749; /* Semi-transparent white */
-    z-index: 10; /* Ensure it's above other elements */
-    position: relative;
-    margin-top: 20px; /* Adds space between the message and the signature */
-    transition: color 0.3s ease;
-  }
-}
-
-/* Prevent zooming on input */
-input, textarea, button, select {
-  font-size: 16px; /* Prevent iOS zooming on input */
 }

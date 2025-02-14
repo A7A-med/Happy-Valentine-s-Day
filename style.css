@@ -387,7 +387,7 @@ span.heart-trail::before {
   .signature {
     font-family: 'Norican';
     text-align: center;
-    font-size: 26px;
+    font-size: 14px;
     font-weight: bolder;
     color: #ad00a749; /* Semi-transparent white */
     z-index: 10; /* Ensure it's above other elements */

@@ -325,6 +325,10 @@ span.heart-trail::before {
   animation: fadeIn 2s ease-in-out;
 }
 
+.message-box.active ~ .signature {
+  bottom: -100px; /* Move signature out of view */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -365,9 +369,15 @@ span.heart-trail::before {
 
   /* Adjust signature for mobile */
   .signature {
-    font-size: 20px; /* Smaller font size */
-    bottom: 20px; /* Move closer to the bottom */
-    left: 20px; /* Move closer to the left */
+    font-family: 'Norican';
+    text-align: center;
+    font-size: 26px;
+    font-weight: bolder;
+    color: #ad00a749; /* Semi-transparent white */
+    z-index: 10; /* Ensure it's above other elements */
+    position: relative;
+    margin-top: 20px; /* Adds space between the message and the signature */
+    transition: color 0.3s ease;
   }
 }
 
